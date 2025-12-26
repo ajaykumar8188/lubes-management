@@ -14,13 +14,19 @@ import Cart from './pages/customer/Cart';
 import OrderHistory from './pages/customer/OrderHistory';
 import Profile from './pages/customer/Profile';
 import ProtectedRoute from './components/ProtectedRoute';
+import { Toaster } from 'react-hot-toast';
+
 
 function App() {
   return (
     <BrowserRouter>
       <AuthProvider>
         <CartProvider>
+          <Toaster position="top-right" reverseOrder={false} />
+
           <Routes>
+
+
             <Route path="/" element={<Navigate to="/login" replace />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
