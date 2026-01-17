@@ -11,3 +11,15 @@ export const getcategories = async (): Promise<any[]> => {
     throw error;
   }
 };
+
+export const getroles = async (): Promise<any[]> => {
+  try {
+    const response = await apiClient.get(`${endpoints.getroles}`);
+    const countries: any[] = response.data as any[];
+    return countries;
+  } catch (error) {
+    console.error("Error fetching countries:", error);
+    throw error;
+  }
+};
+

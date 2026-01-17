@@ -14,6 +14,7 @@ export const apiClient = axios.create({
 export const endpoints = {
     countryListURI: "/api/configuration/countryList",
    Savecategories: "/api/admin/Savecategories",
-    getcategories:"/api/admin/getcategories"
+    getcategories:"/api/admin/getcategories",
+    getroles:"/api/admin/getroles",
 
 }
