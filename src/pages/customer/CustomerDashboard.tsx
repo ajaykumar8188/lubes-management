@@ -2,6 +2,9 @@ import { useState } from 'react';
 import { Search, ShoppingCart, Filter } from 'lucide-react';
 import { mockProducts, mockCategories } from '../../data/mockData';
 import { useCart } from '../../contexts/CartContext';
+import makLogo from '../../assests/maklogo.png';
+import Productslogo from '../../assests/products.png';
+
 
 export default function CustomerDashboard() {
   const { addToCart } = useCart();
@@ -36,10 +39,38 @@ export default function CustomerDashboard() {
         </div>
       )}
 
-      <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl shadow-lg p-8 text-white">
-        <h1 className="text-3xl font-bold mb-2">Welcome to Lubes Store</h1>
-        <p className="text-blue-100">Browse our premium selection of lubricants and oils</p>
+      <div className="rounded-2xl shadow-xl overflow-hidden bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white">
+
+        {/* Top section: Text + Logo */}
+        <div className="flex items-center justify-center px-8 py-6">
+
+          <div >
+            {/* <img
+              src={makLogo}
+              alt="MAK Lubricants"
+              className="h-14 object-contain"
+            /> */}
+            <h1 className="text-3xl font-bold mb-2">
+              Welcome to Anuradha Auto Service Centre
+            </h1>
+
+          </div>
+
+
+        </div>
+
+        {/* Bottom section: Product cans image */}
+        <div className="bg-gradient-to-t from-black/30 to-transparent px-6 pb-6">
+          <img
+            src={Productslogo}
+            alt="MAK Lubricants Range"
+            className="w-full max-h-64 object-contain mx-auto"
+          />
+        </div>
+
       </div>
+
+
 
       <div className="flex flex-col sm:flex-row gap-4">
         <div className="relative flex-1">
@@ -96,7 +127,7 @@ export default function CustomerDashboard() {
               </div>
               <div className="flex items-center justify-between pt-3 border-t border-gray-200">
                 <div>
-                  <p className="text-2xl font-bold text-blue-600">${product.price.toFixed(2)}</p>
+                  <p className="text-2xl font-bold text-blue-600">{product.price.toFixed(2)}</p>
                   <p className="text-xs text-gray-500">{product.stock} in stock</p>
                 </div>
                 <button
